@@ -7,8 +7,8 @@
 body {
   padding: 0;
   margin: 0;
-  background: rgb(13,13,92);
-  background: linear-gradient(90deg, rgba(13,13,92,1) 0%, rgba(4,16,19,1) 75%);
+  background: rgba(13,13,92,1);
+  /* background: linear-gradient(90deg, rgba(13,13,92,1) 0%, rgba(4,16,19,1) 75%); */
 }
 .calculator-grid {
   display: grid;
@@ -73,8 +73,8 @@ body {
 
 @media screen and (max-width: 900px) {
   .calculator-grid {
-      grid-template-columns: repeat(6, 51px);
-      grid-template-rows: repeat(6, 74px);
+      grid-template-columns: repeat(6, 61px);
+      grid-template-rows: repeat(6, 77px);
   }
 
   body {
