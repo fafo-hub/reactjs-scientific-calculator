@@ -91,7 +91,8 @@ body {
       font-size: 1.5rem;
   }
   .calculator-grid > button{
-      font-size: unset;
+      font-size: 15px;
       font-weight: 600;
+
   }
 }
