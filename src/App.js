@@ -1,6 +1,7 @@
 import './App.css';
 import Buttons from './components/buttons';
 import { useState } from 'react';
+import * as math from "mathjs"
 
 function App() {
   // Use State for calculation
@@ -12,7 +13,8 @@ function App() {
   // Onclick function to display number buttons on screen
   const buttonClicked = (e) => {
     setCalculateScreen(calculateScreen.concat(e.target.name))
-    console.log(calculateScreen);
+    let main = calculateScreen;
+    //console.log(main, typeof main);
   }
 
   // Clear Screen
@@ -24,17 +26,16 @@ function App() {
   // Delete last number
   const toDelete = () => {
     setCalculateScreen(calculateScreen.slice(0, calculateScreen.length - 1))
-    console.log(calculateScreen.length);
   }
 
   // Display Result after Calculation, or show error (with error message) when there is syntax error
   const showResult = () => {
     try{
-      //Runs this code when no error 
-      setResultScreen(eval(calculateScreen));
+      //Runs this code when no error
+      setResultScreen(math.evaluate(calculateScreen));
   } catch(err) {
     //Runs this code when there an error
-          console.log(err.message);
+          //console.log(err.message);
           setResultScreen(<p style={{color:'red', fontSize: 12}}>Syntax error: {err.message}</p>)
   }
   }
